@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,70 +13,70 @@ namespace Software_Reengineering
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    if (Request.Cookies["Name"] != null)
-            //    {
-            //        txtUsername.Text = Request.Cookies["Name"].Value;
-            //    }
-            //}
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["Name"] != null)
+                {
+                    txtUsername.Text = Request.Cookies["Name"].Value;
+                }
+            }
         }
 
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //SqlConnection con;
-            //string strcon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            //con = new SqlConnection(strcon);
+            SqlConnection con;
+            string strcon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            con = new SqlConnection(strcon);
 
-            //con.Open();
-            //string strSelect = "SELECT * FROM [User] WHERE Name = @Name";
+            con.Open();
+            string strSelect = "SELECT * FROM [User] WHERE Username = @Name";
 
-            //SqlCommand cmdSelect = new SqlCommand(strSelect, con);
-            //cmdSelect.Parameters.AddWithValue("@Name", txtUsername.Text); //supply value to @Username
+            SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+            cmdSelect.Parameters.AddWithValue("@Name", txtUsername.Text); //supply value to @Username
 
-            //SqlDataReader dtr = cmdSelect.ExecuteReader();
+            SqlDataReader dtr = cmdSelect.ExecuteReader();
 
-            //if (dtr.HasRows)
-            //{
-            //    while (dtr.Read())
-            //    {
-            //        if (txtUsername.Text.Equals(dtr["Name"]))
-            //        {
-            //            if (dtr["Password"].ToString().Equals(txtPassword.Text))
-            //            {
+            if (dtr.HasRows)
+            {
+                while (dtr.Read())
+                {
+                    if (txtUsername.Text.Equals(dtr["Username"]))
+                    {
+                        if (dtr["Password"].ToString().Equals(txtPassword.Text))
+                        {
 
-            //                Session["UserID"] = dtr["UserID"].ToString();
-            //                Session["UserName"] = dtr["Name"].ToString();
-            //                //---cookie
-            //                if (chkBoxRememberMe.Checked)
-            //                {
-            //                    Response.Cookies["Name"].Value = txtUsername.Text;
-            //                    Response.Cookies["Name"].Expires = DateTime.Now.AddDays(7);
-            //                }
-            //                else
-            //                {
-            //                    Response.Cookies["Name"].Expires = DateTime.Now.AddMinutes(-1);
-            //                }
+                            Session["UserID"] = dtr["UserID"].ToString();
+                            Session["UserName"] = dtr["Username"].ToString();
+                            //---cookie
+                            if (chkBoxRememberMe.Checked)
+                            {
+                                Response.Cookies["Name"].Value = txtUsername.Text;
+                                Response.Cookies["Name"].Expires = DateTime.Now.AddDays(7);
+                            }
+                            else
+                            {
+                                Response.Cookies["Name"].Expires = DateTime.Now.AddMinutes(-1);
+                            }
 
-            //                Response.Redirect("HomePage.aspx");
+                            Response.Redirect("HomePage.aspx");
 
-            //            }
-            //            else
-            //            {
-            //                txtPassword.Text = "";
-            //                lblError.Text = "Incorrect Password";
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    txtPassword.Text = "";
-            //    txtUsername.Text = "";
-            //    lblError.Text = "Username not existed.";
-            //}
-            //con.Close();
+                        }
+                        else
+                        {
+                            txtPassword.Text = "";
+                            lblError.Text = "Incorrect Password";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                txtPassword.Text = "";
+                txtUsername.Text = "";
+                lblError.Text = "Username not existed.";
+            }
+            con.Close();
         }
     }
 }

@@ -13,6 +13,9 @@ a {
     text-decoration: none;
 }
 
+button{
+    border : 2px solid forestgreen !important;
+}
 
 body {
     background-color:rgb(230,230,230);

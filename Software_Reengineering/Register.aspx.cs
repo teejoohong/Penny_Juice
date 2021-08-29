@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,6 +11,7 @@ namespace Software_Reengineering
 {
     public partial class Register : System.Web.UI.Page
     {
+        Boolean duplicate = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,73 +19,74 @@ namespace Software_Reengineering
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            //SqlConnection con;
-            //string strcon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            //con = new SqlConnection(strcon);
-            //con.Open();
+            SqlConnection con;
+            string strcon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            con = new SqlConnection(strcon);
+            con.Open();
 
-            //string strSelect = "SELECT Name FROM [User]";
-            ////specify what is the command , what is the connection string
-            //SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+            string strSelect = "SELECT Username FROM [User]";
+            //specify what is the command , what is the connection string
+            SqlCommand cmdSelect = new SqlCommand(strSelect, con);
 
-            //SqlDataReader dtr = cmdSelect.ExecuteReader();
+            SqlDataReader dtr = cmdSelect.ExecuteReader();
 
-            //if (dtr.HasRows)
-            //{
-            //    while (dtr.Read())
-            //    {
-            //        if (txtUsername.Text.Equals(dtr["Name"]))
-            //        {
-            //            duplicate = true;
-            //            lblDuplicate.Text = "Username existed.";
+            if (dtr.HasRows)
+            {
+                while (dtr.Read())
+                {
+                    if (txtUsername.Text.Equals(dtr["Username"]))
+                    {
+                        duplicate = true;
+                        lblDuplicate.Text = "Username existed.";
 
-            //        }
-            //    }
-            //}
-            //con.Close();
+                    }
+                }
+            }
+            con.Close();
 
-            //if (!duplicate) //no repeated username
-            //{
-            //    SqlConnection newCon;
-            //    string newStrCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            if (!duplicate) //no repeated username
+            {
+                SqlConnection newCon;
+                string newStrCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-            //    newCon = new SqlConnection(newStrCon);
-            //    newCon.Open();
+                newCon = new SqlConnection(newStrCon);
+                newCon.Open();
 
-            //    string strSelect2 = "Select count(UserID) from [User]";
-            //    SqlCommand cmdSelect2 = new SqlCommand(strSelect2, newCon);
+                string strSelect2 = "Select count(UserID) from [User]";
+                SqlCommand cmdSelect2 = new SqlCommand(strSelect2, newCon);
 
-            //    int total = (int)cmdSelect2.ExecuteScalar() + 1;
-            //    newCon.Close();
+                int total = (int)cmdSelect2.ExecuteScalar() + 1;
+                newCon.Close();
 
-            //    String userID = "US" + total.ToString();
+                String userID = "US" + total.ToString();
 
 
-            //    newCon.Open();
+                newCon.Open();
 
-            //    string strInsert = "INSERT INTO [User] (UserID, Name, Email, Password,Gender) VALUES (@UserID, @Name, @Email, @Password,@Gender)";
+                string strInsert = "INSERT INTO [User] (UserID, Username, Email, Password) VALUES (@UserID, @Name, @Email, @Password)";
 
-            //    SqlCommand cmdInsert = new SqlCommand(strInsert, newCon);
-            //    cmdInsert.Parameters.AddWithValue("@UserID", userID);
-            //    cmdInsert.Parameters.AddWithValue("@Name", txtUsername.Text.ToString());
-            //    cmdInsert.Parameters.AddWithValue("@Email", txtEmail.Text.ToString());
-            //    cmdInsert.Parameters.AddWithValue("@Password", txtPassword.Text.ToString());
-            //    cmdInsert.Parameters.AddWithValue("@Gender", ddlGender.Text.ToString());
-            //    int n = cmdInsert.ExecuteNonQuery();
+                SqlCommand cmdInsert = new SqlCommand(strInsert, newCon);
+                cmdInsert.Parameters.AddWithValue("@UserID", userID);
+                cmdInsert.Parameters.AddWithValue("@Name", txtUsername.Text.ToString());
+                cmdInsert.Parameters.AddWithValue("@Email", txtEmail.Text.ToString());
+                cmdInsert.Parameters.AddWithValue("@Password", txtPassword.Text.ToString());
 
-            //    if (n > 0) // Use to check whether the value have been insert into the database
-            //    {
-            //        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Account Successfully Created!" + "');", true);
-            //        Response.Redirect("LogIn.aspx");
-            //    }
-            //    else
-            //    {
-            //        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Failed! " + "');", true);
-            //    }
+                int n = cmdInsert.ExecuteNonQuery();
 
-            //    newCon.Close();
+                if (n > 0) // Use to check whether the value have been insert into the database
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Account Successfully Created!" + "');", true);
+                    Response.Redirect("LogIn.aspx");
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Failed! " + "');", true);
+                }
 
-            
+                newCon.Close();
+
+
+            }
         }
     }
 }

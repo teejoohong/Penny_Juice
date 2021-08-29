@@ -12,7 +12,7 @@
         <div class="numbertext">1 / 3</div>
         <img src="BuildInPictures/fruits.jpg" style="width:100%">
         <div class="text">Different Flavours Available !!!</div>
-      </div>w3
+      </div>
 
       <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
