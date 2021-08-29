@@ -77,6 +77,7 @@
     <Content Include="BuildInPictures\kid.jpg" />
     <Content Include="BuildInPictures\pennyjuice-logo-462w.png" />
     <Content Include="BuildInPictures\receipe.jpg" />
+    <Content Include="Cart.aspx" />
     <Content Include="CSS\AboutUs.css" />
     <Content Include="CSS\HomePage.css" />
     <Content Include="CSS\LogIn.css" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgetPassword.aspx.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
