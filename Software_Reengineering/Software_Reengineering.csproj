@@ -83,6 +83,7 @@
     <Content Include="CSS\MasterPage.css" />
     <Content Include="CSS\Register.css" />
     <Content Include="ForgetPassword.aspx" />
+    <Content Include="Gallery.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="Register.aspx" />
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="ForgetPassword.aspx.designer.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
