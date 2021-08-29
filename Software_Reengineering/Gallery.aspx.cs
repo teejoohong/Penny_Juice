@@ -43,7 +43,7 @@ namespace Software_Reengineering
                     {
                         while (dtr.Read())
                         {
-                            if (addedJuice.Equals(dtr["JuiceID"]) && Session["Value"].Equals(dtr["UserID"]))
+                            if (addedJuice.Equals(dtr["JuiceID"]) && Session["UserID"].Equals(dtr["UserID"]))
                             {
                                 duplicate = true;
                                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Already added! " + "');", true);
