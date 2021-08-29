@@ -14,11 +14,11 @@
                     <br />
                     <a style="margin-left: 10px">Quantity: </a><asp:Label ID="Label4" runat="server"  Text='<%#Eval("Total") %>'></asp:Label>
                     <br/><br />                
-                    <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Add to cart" CommandName="AddToCart" CommandArgument='<%# Eval("JuiceID") %>'/>&nbsp<br /><br />
+                    <asp:Button CssClass="Button" ID="Button1" runat="server" Text='Add to cart' CommandName="AddToCart" CommandArgument='<%# Eval("JuiceID") %>'/>&nbsp<br /> <br />
                     
                     <br />
                     </div>
         </ItemTemplate>
     </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Item_Name], [Description], [Price], [Total], [Image] FROM [Gallery]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT JuiceID, Item_Name, Description, Price, Total, Image FROM Gallery WHERE (Total &gt; 0)"></asp:SqlDataSource>
 </asp:Content>

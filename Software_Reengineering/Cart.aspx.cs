@@ -13,5 +13,20 @@ namespace Software_Reengineering
         {
 
         }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Chk_Empty_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

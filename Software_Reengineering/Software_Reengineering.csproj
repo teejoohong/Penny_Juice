@@ -88,6 +88,7 @@
     <Content Include="HomePage.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="UploadItem.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadItem.aspx.cs">
+      <DependentUpon>UploadItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadItem.aspx.designer.cs">
+      <DependentUpon>UploadItem.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
