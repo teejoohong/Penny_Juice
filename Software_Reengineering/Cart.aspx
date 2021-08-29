@@ -31,7 +31,7 @@
             </div>
         <%}
           else{ %>
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Gallery.Item_Name, CartGallery.Quantity, CartGallery.TotalPrice, Gallery.Image, CartGallery.UserID FROM CartGallery INNER JOIN Gallery ON CartGallery.JuiceID = Gallery.JuiceID WHERE (CartGallery.UserID = @UserID)">
+      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Gallery.Item_Name, CartGallery.Quantity, CartGallery.TotalPrice, Gallery.Image, CartGallery.UserID, Gallery.JuiceID FROM CartGallery INNER JOIN Gallery ON CartGallery.JuiceID = Gallery.JuiceID WHERE (CartGallery.UserID = @UserID)">
           <SelectParameters>
               <asp:SessionParameter Name="UserID" SessionField="UserID" />
           </SelectParameters>
@@ -67,9 +67,9 @@
                  </tr>
                </table>
 
-      <asp:DataList ID="DataList1" runat="server"  DataSourceID="SqlDataSource1"  OnItemCommand="DataList1_ItemCommand" Height="16px" Width="100%">
+      <asp:DataList ID="DataList1" runat="server"  DataSourceID="SqlDataSource1"  OnItemCommand="DataList1_ItemCommand" Height="16px" Width="100%" >
                 <ItemTemplate>
-                    <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("DrawID") %>' />
+                    <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("JuiceID") %>' />
                 <br/>
                 <table class="table table-bordered" style="width: 100%; background-color: lightgray">
                     <tr>
@@ -84,11 +84,11 @@
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label>
                         </td>
                         <td class="width1">
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("TotalPrice") %>'></asp:Label>                          
+                            <asp:Label ID="Label3" runat="server" Text='<%# String.Format("{0:0.00}",Eval("TotalPrice"))%>'></asp:Label>                          
 
                         </td>
                         <td class="width1">
-                             <asp:Button ID="Add" runat="server" Text="+" CommandName="Adding" CommandArgument='<%# Eval("DrawID") %>' /><br />                        
+                             <asp:Button ID="Add" runat="server" Text="+" CommandName="Adding" CommandArgument='<%# Eval("JuiceID") %>' /><br />                        
 
                         </td>
                         
@@ -98,11 +98,11 @@
                            
                         </td>
                         <td class="width1">
-                              <asp:Button ID="Subtract" width="26px" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("DrawID") %>'  />                    
+                              <asp:Button ID="Subtract" width="26px" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("JuiceID") %>'/>                    
 
                         </td>
                         <td class="width1">
-                            <asp:Button ID="Button1" runat="server" CssClass="btnAll" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("DrawID") %>'/>
+                            <asp:Button ID="Button1" runat="server" CssClass="btnAll" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
                         </td>
                     </tr>
                 </table>

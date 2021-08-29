@@ -5,8 +5,8 @@
 .loginTable {
     width: 50%;
     margin: 50px auto 100px auto;
-    border: 2px solid yellowgreen;
-    background-color:lightgray;
+    border: 2px solid forestgreen;
+    background-color: lightgray;
 }
 
 .loginTitle {
@@ -47,7 +47,7 @@
     width: 20%;
     height: 30px;
     font-size: 18px;
-    border:none;
+    border: 2px solid forestgreen;
 }
 
     .buttonLogin:hover {

@@ -31,8 +31,9 @@
     background-color: yellowgreen;
     color: black;
     width: 20%;
-    height: 80%;
+    height: 30px;
     font-size: 18px;
+    border: 2px solid forestgreen;
 }
 
     .buttonLogin:hover {

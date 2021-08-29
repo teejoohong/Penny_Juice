@@ -16,14 +16,7 @@ namespace Software_Reengineering
         {
 
         }
-        protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
-        {
 
-            DataRowView datarow = (DataRowView)e.Item.DataItem;
-            string imageUrl = (datarow["ProfilePicture"]).ToString();
-            (e.Item.FindControl("Image1") as Image).ImageUrl = imageUrl;
-
-        }
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
@@ -41,7 +34,7 @@ namespace Software_Reengineering
                     string strSelectChecking = "Select * from CartGallery Where JuiceID=@JuiceID and UserID = @UserID";
                     SqlCommand cmdSelect = new SqlCommand(strSelectChecking, con);
 
-                    cmdSelect.Parameters.AddWithValue("@UserID", Session["Value"]);
+                    cmdSelect.Parameters.AddWithValue("@UserID", Session["UserID"]);
                     cmdSelect.Parameters.AddWithValue("@JuiceID", addedJuice);
 
                     SqlDataReader dtr = cmdSelect.ExecuteReader();
@@ -78,7 +71,7 @@ namespace Software_Reengineering
                         string strInsert = "Insert into CartGallery (UserID, JuiceID,TotalPrice) Values (@UserID, @JuiceID,@TotalPrice)";
 
                         SqlCommand cmdInsert = new SqlCommand(strInsert, con);
-                        cmdInsert.Parameters.AddWithValue("@UserID", Session["Value"]);
+                        cmdInsert.Parameters.AddWithValue("@UserID", Session["UserID"]);
                         cmdInsert.Parameters.AddWithValue("@JuiceID", addedJuice);
                         cmdInsert.Parameters.AddWithValue("@TotalPrice", totalPrice);
                  

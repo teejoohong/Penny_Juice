@@ -59,7 +59,7 @@ namespace Software_Reengineering
 
             con.Open();
 
-            string strInsert = "Insert into Gallery (JuiceID, Item_Name, Description, Price, Total, Image) Values (@JuiceID, @Item_Name, @Description, @Price, @Total, @Image)";
+            string strInsert = "Insert into [Gallery] (JuiceID, Item_Name, Description, Price, Total, Image) Values (@JuiceID, @Item_Name, @Description, @Price, @Total, @Image)";
 
             SqlCommand cmdInsert = new SqlCommand(strInsert, con);
 

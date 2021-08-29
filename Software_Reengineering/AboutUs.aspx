@@ -6,7 +6,7 @@
     <!--CSS -->
     <link href="CSS/AboutUs.css" rel="stylesheet" type="text/css" />
     <h1 style="text-align:center">About Us</h1> <br />
-    <p class="imgLogo"> <asp:Image ID="Image1" runat="server" ImageUrl="~/BuildInPictures/pennyjuice-logo-462w.png" AlternateText="Smart Personal Scheduler" Height="50px" Width="300px" /></p>
+    <p class="imgLogo"> <asp:Image ID="Image1" runat="server" ImageUrl="~/BuildInPictures/pennyjuice-logo-462w.png" AlternateText="Smart Personal Scheduler" Height="60px" Width="300px" /></p>
     <div class="aboutUs">
        
         
