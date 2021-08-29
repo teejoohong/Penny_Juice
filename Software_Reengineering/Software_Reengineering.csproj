@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PennyJuiceDatabase.mdf" />
+    <Content Include="App_Data\PennyJuiceDatabase_log.ldf">
+      <DependentUpon>PennyJuiceDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="BuildInPictures\fruits.jpg" />
     <Content Include="BuildInPictures\kid.jpg" />
     <Content Include="BuildInPictures\pennyjuice-logo-462w.png" />
