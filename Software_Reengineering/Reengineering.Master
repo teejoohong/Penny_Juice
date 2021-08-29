@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Reengineering.Master.cs" Inherits="Software_Reengineering.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Smart Personal Scheduler</title>
+
+    <!--CSS-->
+        <!--bootstarp css -->
+    <link href="CSS/MasterPage.css" rel="stylesheet" type="text/css" />
+
+    <!--Meta for responsive website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="topMenu" class="header">
+        <asp:HyperLink ID="logo" runat="server" NavigateUrl="~/HomePage.aspx" ImageUrl="~/BuildInPictures/pennyjuice-logo-462w.png"  CssClass="imgBurgerMenu"/>
+            <% 
+           if (Session["UserID"] == null || Session["UserID" ] == "0")
+           {%>
+        <asp:HyperLink ID="linkLogIn" runat="server" NavigateUrl="~/LogIn.aspx" CssClass="logInLink" ValidationGroup="none">SignIn</asp:HyperLink><div class="logInLink">|</div>
+        <asp:HyperLink ID="linkRegister" runat="server" NavigateUrl="~/Register.aspx" CssClass="logInLink" ValidationGroup="none">Register</asp:HyperLink>
+            <%}
+            else{%>
+                   <asp:LinkButton ID="ltnButton1" CssClass="logInLink"  runat="server" style="float:right; color:aliceblue; font-size: 16px" ValidationGroup="none">Sign out</asp:LinkButton><div class="logInLink">|</div>
+                     <a href="Profile.aspx" class="logInLink"><asp:Label ID="CustomerUsername" runat="server" Text="Label" style="float:right; color:aliceblue;font-size:16px; margin-right:10px" ValidationGroup="none"></asp:Label> </a> 
+                     
+            <%}%>
+
+            
+        <asp:Menu ID="menuNav" runat="server" RenderingMode="Table" Orientation="Horizontal" CssClass="menuBar">
+            <StaticSelectedStyle BackColor="forestgreen" VerticalPadding="20px"/>   
+            <Items>
+                   <asp:MenuItem NavigateUrl="~/HomePage.aspx" Text="Home" Value="Home Page"/>
+                   <asp:MenuItem NavigateUrl="~/AboutUs.aspx" Text="AboutUs" Value="About Us"/>
+                   
+              </Items>
+        </asp:Menu>
+
+            <!--hamburger menu -->
+            <div class="menuWrap">
+            
+
+            <input id="Checkbox1" type="checkbox" class="toggler" />
+            <div class="hamburger">
+                <div>
+
+                </div>
+            </div>
+            <div class ="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/HomePage.aspx" runat="server">Home</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/AboutUs.aspx" runat="server">AboutUs</asp:HyperLink></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+        <div class ="pageContent">
+            <!--Content for other pages-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class ="footer">
+            <p>Encounter problem ?</p>
+            <p>Contact Us at +6012- 345 6789</p>
+            <br/>
+            <p>&#169 Copyright Kenny Juice 2021. All right reserved</p>
+        </div>
+    </form>
+</body>
+</html>

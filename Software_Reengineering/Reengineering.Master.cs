@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Software_Reengineering
+{
+    public partial class Site1 : System.Web.UI.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+
+                if (Session["UserID"] != null)
+                {
+                    //CustomerUsername.Text = Session["Username"].ToString();
+
+                }
+            }
+
+            foreach (MenuItem item in menuNav.Items)
+            {
+                if (item.NavigateUrl.Equals(Request.AppRelativeCurrentExecutionFilePath))
+                {
+                    item.Selected = true;
+                    //Label1.Text = HttpContext.Current.Request.Url.AbsolutePath; /HomePage.aspx
+                    //Label1.Text = item.Text.ToString(); Home
+                    //Label1.Text = item.NavigateUrl.ToString(); ~/Calories.aspx
+                }
+            }
+        }
+    }
+}
