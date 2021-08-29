@@ -69,10 +69,9 @@
             
             </div>
             </td>
+            
         </tr>
     </table>
-
-
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
