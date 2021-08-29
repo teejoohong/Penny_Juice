@@ -1,0 +1,64 @@
+﻿.menuBar {
+    margin-top: 0.001px;
+}
+
+.loginTable {
+    width: 50%;
+    margin: 50px auto 100px auto;
+    border: 2px solid yellowgreen;
+    background-color:lightgray;
+}
+
+.loginTitle {
+    text-align: center;
+    background-color: yellowgreen;
+    color: black;
+    height: 80px;
+    font-size: 18px;
+}
+
+.rowInput {
+    height: 80px
+}
+
+.inputBox {
+    background-color: lightgray;
+}
+
+.rowInput input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 35%;
+    height: 30px
+}
+
+.rowButtonLogin {
+    text-align: center;
+    height: 50px;
+}
+
+.rowLink {
+    height: 50px;
+}
+
+.buttonLogin {
+    background-color: yellowgreen;
+    color: black;
+    width: 20%;
+    height: 30px;
+    font-size: 18px;
+    border:none;
+}
+
+    .buttonLogin:hover {
+        background-color: forestgreen;
+    }
+
+.text {
+    width: 40%;
+    text-align: right;
+}
+
+.linkForgetPassword {
+    text-align: right
+}

@@ -1,0 +1,58 @@
+﻿.rowInput {
+    height: 80px
+}
+
+.text {
+    width: 40%;
+    text-align: right;
+}
+
+.rowInput input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 35%;
+    height: 30px
+}
+
+.registerTable{
+    background-color:lightgray
+        
+}
+
+.inputBox {
+    background-color: lightgray;
+}
+
+.menuBar {
+    margin-top: 0.001px;
+}
+
+.buttonLogin {
+    background-color: yellowgreen;
+    color: black;
+    width: 20%;
+    height: 80%;
+    font-size: 18px;
+}
+
+    .buttonLogin:hover {
+        background-color: forestgreen;
+    }
+
+.ddlGender {
+    width: 35%;
+    height: 30px
+}
+
+.rowButtonLogin {
+    text-align: center;
+    height: 50px;
+}
+
+.linkForgetPassword {
+    text-align: right
+}
+
+.rowLink {
+    height: 50px;
+}
