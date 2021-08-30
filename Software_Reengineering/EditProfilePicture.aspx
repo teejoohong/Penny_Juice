@@ -72,7 +72,6 @@
                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>">
                          <SelectParameters>
                              <asp:SessionParameter Name="UserID" SessionField="UserID" />
-                             
                         </SelectParameters>
                 </asp:SqlDataSource>
 </asp:Content>
