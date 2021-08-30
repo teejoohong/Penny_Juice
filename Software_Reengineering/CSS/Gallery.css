@@ -1,0 +1,62 @@
+﻿.Button {
+    border-color: #4D94FF;
+    background-color: white;
+    /*color: #284E98;*/
+    color: black;
+     margin-left: 4%;
+}
+
+    .Button:hover {
+        background-color: rgb(54,118,232);
+        color: white;
+        border: thick;
+    }
+
+.Img {
+    width: 260px;
+    height: 200px;
+    border: 2px solid black;
+    background-color: lightgrey;
+    padding: 5%;
+}
+
+.frame {
+    width: 260px;
+    height: 200px;
+    border: 2px solid black;
+    border-top: none;
+    padding: 5%;
+    background-color: lightgrey;
+    font-size: small;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 1% 5%;
+    padding-top: 2%;
+}
+
+.linkBtn {
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #4D94FF;
+    background-color: ghostwhite;
+    text-align: center;
+    color: rgb(100,149,237);
+    width: 800px;
+    height: 50px;
+}
+
+.background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 1800px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-bottom: 3%;
+    background-color: none;
+}

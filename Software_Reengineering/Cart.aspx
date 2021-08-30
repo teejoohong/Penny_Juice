@@ -2,32 +2,57 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <style type="text/css">
+        
+        
+        .tableFormat {
+            border-collapse: collapse;
+            border: 2px solid black;
+            height: auto;
+            width :700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom:200px;
+            margin-top:100px;
+            background-color:lightgray;
 
+        }
+         </style>
     
      <% if ( Session["UserID"] == null)
           { %>
-            <div style="height:20%">
+            
 
+        <div style="height:400px">
             <table class="tableFormat">
                 <tr>
-                    <td >                      
-                        <p > Please log in to view your cart.</p>
-                         </td>
+                    <td class="auto-style">
+                        <p style="text-align:center; font-size:x-large">Please log in to view your cart.</p>
+                           </td>
                 </tr>
-
                 <tr>
-                    <td >
-                            &nbsp;
+                    <td class="auto-style">
+                            &nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">
+                          
+                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" style="
+                            background-color: white; text-align:center;" 
+                            OnClick="btnSignIn_Click" Width="200px"/>
+                
                     </td>
                 </tr>
-
                 <tr>
-                    <td style="text-align:center">                                                
-                        <asp:Button ID="Button1" runat="server" Text="Sign In" OnClick="Button1_Click"  />
-                    </td>
-                </tr>            
+                    <td style="text-align:center">
+                           &nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">
+                           &nbsp;</td>
+                </tr>
+               
             </table>
-
             </div>
         <%}
           else{ %>
@@ -113,7 +138,19 @@
                 
             </ItemTemplate>
             </asp:DataList>
-            <asp:Label ID="totalPrice1" runat="server" Text="Label"></asp:Label>
+             <table>
+                <tr style="font-size:20px;text-align:right">
+                    <td style="width:1000px;" >Total: RM </td>
+                    <td style="width:14.28%;"><asp:Label ID="totalPrice1" runat="server" Text="" CssClass="totalprice"></asp:Label></td>
+                </tr>
+            </table>
+           
+            <br />
+            <br/>
+
+            <div style="text-align : right  ; margin-bottom : 3%">
+                <asp:Button ID="check_Out" runat="server" CssClass="btnAll" Height="80px" Width="160px" Text="Check Out" OnClick="check_Out_Click" />
+            </div>
      <%} %>
    
             </asp:Content>
