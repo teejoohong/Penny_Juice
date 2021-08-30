@@ -8,8 +8,7 @@
     <h1 style="text-align:center">About Us</h1> <br />
     <p class="imgLogo"> <asp:Image ID="Image1" runat="server" ImageUrl="~/BuildInPictures/pennyjuice-logo-462w.png" AlternateText="Smart Personal Scheduler" Height="60px" Width="300px" /></p>
     <div class="aboutUs">
-       
-        
+
         <article><br /><br /><br /><br />
  
             <p>Smart Personal Scheduler provide you an easy way for you to create
