@@ -66,6 +66,10 @@
                     </td>
                  </tr>
                </table>
+    <div style="font-size:x-large; margin-top : 1% ; font-weight:bold">
+                Number of items in cart :
+                <asp:Label ID="Label3" runat="server" Text="" ></asp:Label>
+            </div>
 
       <asp:DataList ID="DataList1" runat="server"  DataSourceID="SqlDataSource1"  OnItemCommand="DataList1_ItemCommand" Height="16px" Width="100%" >
                 <ItemTemplate>
@@ -109,7 +113,7 @@
                 
             </ItemTemplate>
             </asp:DataList>
-        
+            <asp:Label ID="totalPrice1" runat="server" Text="Label"></asp:Label>
      <%} %>
    
             </asp:Content>
