@@ -15,13 +15,13 @@ namespace Software_Reengineering
     {
 
         /// <summary>
-        /// Button1 control.
+        /// btnSignIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnSignIn;
 
         /// <summary>
         /// SqlDataSource1 control.
@@ -58,5 +58,14 @@ namespace Software_Reengineering
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label totalPrice1;
+
+        /// <summary>
+        /// check_Out control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button check_Out;
     }
 }

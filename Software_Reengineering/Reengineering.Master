@@ -44,6 +44,7 @@
                    <asp:MenuItem NavigateUrl="~/Gallery.aspx" Text="Gallery" Value="Gallery"/>
                    <asp:MenuItem NavigateUrl="~/Cart.aspx" Text="Cart" Value="Cart"/>
                    <asp:MenuItem NavigateUrl="~/Profile.aspx" Text="Profile" Value="Profile"/>
+                <asp:MenuItem NavigateUrl="~/OrderHistory.aspx" Text="Order History" Value="Order History"/>
               </Items>
         </asp:Menu>
 
@@ -66,6 +67,7 @@
                              <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/Gallery.aspx" runat="server">Gallery</asp:HyperLink></li>
                             <li><asp:HyperLink ID="HyperLink4" NavigateUrl="~/Cart.aspx" runat="server">Cart</asp:HyperLink></li>
                             <li><asp:HyperLink ID="HyperLink5" NavigateUrl="~/Profile.aspx" runat="server">Profile</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink6" NavigateUrl="~/OrderHistory.aspx" runat="server">Order History</asp:HyperLink></li>
                         </ul>
                     </div>
                 </div>

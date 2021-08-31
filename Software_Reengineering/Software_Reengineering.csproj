@@ -78,7 +78,9 @@
     <Content Include="BuildInPictures\pennyjuice-logo-462w.png" />
     <Content Include="BuildInPictures\receipe.jpg" />
     <Content Include="Cart.aspx" />
+    <Content Include="CheckOut.aspx" />
     <Content Include="CSS\AboutUs.css" />
+    <Content Include="CSS\Gallery.css" />
     <Content Include="CSS\HomePage.css" />
     <Content Include="CSS\LogIn.css" />
     <Content Include="CSS\MasterPage.css" />
@@ -90,6 +92,8 @@
     <Content Include="Gallery.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="LogIn.aspx" />
+    <Content Include="OrderHistory.aspx" />
+    <Content Include="OrderHistoryDetails.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="UploadItem.aspx" />
@@ -109,6 +113,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditProfile.aspx.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
@@ -151,6 +162,20 @@
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderHistoryDetails.aspx.cs">
+      <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderHistoryDetails.aspx.designer.cs">
+      <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

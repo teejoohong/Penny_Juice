@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="CSS/Gallery.css" rel="stylesheet" type="text/css" />
+
     <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1"  CellPadding="20" RepeatColumns="5" RepeatDirection="Horizontal"  OnItemCommand="DataList1_ItemCommand"  AllowPaging="true" PageSize ="2" >
         <ItemTemplate>
         <asp:Image ID="Image1" CssClass="Img" runat="server" ImageUrl='<%# Eval("Image") %>' />
