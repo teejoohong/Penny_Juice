@@ -86,7 +86,10 @@
 
         <div class ="footer">
             <p>Encounter problem ?</p>
-            <p>Contact Us at +6012- 345 6789</p>
+            <p>Contact Us <br />
+                Phone: 563-386-1999<br />
+                Fax: 563-386-6200
+            </p>
             <br/>
             <p>&#169 Copyright Kenny Juice 2021. All right reserved</p>
         </div>

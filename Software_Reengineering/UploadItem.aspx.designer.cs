@@ -78,6 +78,15 @@ namespace Software_Reengineering
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
+        /// CategoryList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CategoryList;
+
+        /// <summary>
         /// TextBox1 control.
         /// </summary>
         /// <remarks>
