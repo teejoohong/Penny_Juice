@@ -435,9 +435,16 @@ namespace Software_Reengineering
         }
 
 
-        protected void btnSignIn_Click1(object sender, EventArgs e)
+
+
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
             Response.Redirect("LogIn.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
         }
     }
 }

@@ -3,10 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            background-color : lightgray;
-        }
         .width1 {
             width: 15.8%;
             padding : 2%;
@@ -49,37 +45,34 @@
         .btnDelete{
             border-color: #4D94FF; background-color: white; color: #284E98;
         }
-    </style>
-     <h1 style="text-align:center">Wishlist</h1><hr />
+         </style>
+     
      <% if (Session["UserID"] == "0" || Session["UserID"] == null)
           { %>
         <div >
-            <table class="inputForm">
+             <table id="loginForm" class="inputForm">
                 <tr>
-                    <td class="auto-style">
-                        <p style="text-align:center; font-size:x-large">Please log in to view your wishlist.</p>
-                           </td>
+                    <th colspan="2"><h2>Wishlist</h2></th>
                 </tr>
                 <tr>
-                    <td class="auto-style">
-                            &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td style="text-align:center">
-                          
-                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" CssClass="buttonLogin" />
-                
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click" />
+                    </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-               
             </table>
             </div>
 

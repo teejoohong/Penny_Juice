@@ -16,10 +16,7 @@ namespace Software_Reengineering
 
         }
 
-        protected void btnSignIn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("LogIn.aspx");
-        }
+
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
@@ -53,6 +50,16 @@ namespace Software_Reengineering
                 con.Close();
             }
 
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogIn.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
         }
     }
 

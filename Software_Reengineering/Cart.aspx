@@ -44,11 +44,6 @@ background-color: forestgreen;
             
         }
 
-        .auto-style1 {
-            width: 100%;
-            
-
-        }
         .width1 {
             width: 14%;
             padding: 2%;
@@ -69,32 +64,29 @@ background-color: forestgreen;
             
 
         <div >
-            <table class="inputForm">
+             <table id="loginForm" class="inputForm">
                 <tr>
-                    <td class="auto-style">
-                        <p style="text-align:center; font-size:x-large">Please log in to view your cart.</p>
-                           </td>
+                    <th colspan="2"><h2>Cart</h2></th>
                 </tr>
                 <tr>
-                    <td class="auto-style">
-                            &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td style="text-align:center">
-                          
-                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" CssClass="buttonLogin" OnClick="btnSignIn_Click1"/>
-                
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click" />
+                    </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-               
             </table>
             </div>
         <%}
