@@ -5,22 +5,19 @@
       
     <!--CSS -->
     <link href="CSS/AboutUs.css" rel="stylesheet" type="text/css" />
-    <h1 style="text-align:center">About Us</h1> <br />
     <p class="imgLogo"> <asp:Image ID="Image1" runat="server" ImageUrl="~/BuildInPictures/pennyjuice-logo-462w.png" AlternateText="Smart Personal Scheduler" Height="60px" Width="300px" /></p>
     <div class="aboutUs">
 
         <article><br /><br /><br /><br />
  
-            <p>Smart Personal Scheduler provide you an easy way for you to create
-                a timetable!
+            <p>Penny Juice, best juice provider in the US !!!
             </p>
             <p>
-                We aimed to assist users in changing from unhealty living lifestyle
-                to a healtheir lifestyle and make users more discipline in term of 
-                their daily activities to get rid of unhealthy living lifestyle!
+                15 flavors available including 7 color free flavors. 
+                Each case contains 6 - ½ gallon bottles of your choice. We’ve designed them especially for childcare, 
+                daycare, preschool, basp and extended daycare. Get in touch with us today!
             </p>
-            <p> Try it out now! Tutorial is also available to guide
-                you through out the timetable generation process!
+            <p> We provide a variety of flavors that all kids can enjoy! All the juice concentrates that we sell are compliant with the USDA and FDA guidelines. You don't need to refrigerate the concentrates before or after opening them.
             </p><br /><br /><br /><br /><br />
            
         </article>
@@ -28,16 +25,16 @@
 
   <div class="row">
       <div class="column">
-        <h2>Contacts</h2>
-        <hr />
-        <p>+6018-319 9792 (TEE)</p>
-        <p>+6019-358 9809 (YONG)</p>
+        <p>Contact Us <br />
+                Phone: 563-386-1999<br />
+                Fax: 563-386-6200
+            </p>
       </div>
       <div class="column" >
         <h2>Emails</h2>
         <hr />
-        <p>teejh-wp18@student.tarc.edu.my</p>
-        <p>yongwh-wp18@student.tarc.edu.my</p>
+        <p>pennyjuice@hotmail.com</p>
+        
       </div>
 </div>
 

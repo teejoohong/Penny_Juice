@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
- <table class ="auto-style8">
+    <table class ="auto-style8">
 
         <tr>
             <td class="auto-style5">Item Details</td>
@@ -41,7 +41,15 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Your Correct Product Price" ControlToValidate="Price" ValidationExpression="^\d{0,8}(\.\d{1,2})?$" SetFocusOnError="True" ForeColor="Red" ValidationGroup="postArt"></asp:RegularExpressionValidator>
             </td>
         </tr>
-        
+        <tr>
+            <td>Category :</td>
+            <td>
+                <asp:DropDownList ID="CategoryList" runat="server">
+                    <asp:ListItem>Color Free</asp:ListItem>
+                    <asp:ListItem>Normal juice</asp:ListItem>
+                     <asp:ListItem>Mixed juice</asp:ListItem>
+                </asp:DropDownList></td>
+        </tr>
         <tr>
             <td class="auto-style2">
                 Total Item :

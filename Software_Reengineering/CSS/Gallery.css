@@ -12,6 +12,12 @@
         border: thick;
     }
 
+.dataList {
+    overflow-x: scroll;
+    margin-left: 10%;
+    width:85%
+}
+
 .Img {
     width: 260px;
     height: 200px;
@@ -34,20 +40,28 @@
 .container {
     display: flex;
     align-items: flex-start;
-    margin: 0 0 1% 5%;
+    margin-left:20.5%;
+    margin-bottom:20px;
     padding-top: 2%;
 }
 
 .linkBtn {
     font-weight: bold;
     text-decoration: none;
-    border: 1px solid #4D94FF;
-    background-color: ghostwhite;
+    border: 1px solid forestgreen;
+    background-color: yellowgreen;
     text-align: center;
-    color: rgb(100,149,237);
-    width: 800px;
+    color: black;
+    width: 20%;
     height: 50px;
+    padding-top:20px
 }
+
+.linkBtn:hover{
+    background-color:forestgreen
+}
+
+
 
 .background {
     background-position: center;

@@ -40,7 +40,7 @@
     </style>
      <h1 style="text-align:center">Details</h1><hr />
     <div style="margin-left: 8%; margin-right: 8%;">
-     <table class="table table-bordered" style="width: 100%; background-color: darkgray">
+     <table class="table table-bordered" style="width: 100%; background-color: yellowgreen">
                 <tr>
                     <th class="title">
                         JuiceID

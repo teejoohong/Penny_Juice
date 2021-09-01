@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="OrderHistory.aspx.cs" Inherits="Software_Reengineering.OrderHistory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/Profile.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <style type="text/css">
@@ -27,6 +28,9 @@
         .btnView{
             border-color: #4D94FF; background-color: white; color: #284E98;
         }
+        .btnView:hover{
+            background-color:#4D94FF; color:white;
+        }
 
         .content{
             border : none;
@@ -35,45 +39,40 @@
         }
 
     </style>
-      <h1 style="text-align:center">Order History</h1><hr />
+      
     <% if (Session["UserID"] == null)
           { %>
-        <div style="height:400px">
-            <table class="tableFormat">
+         <div ID="loginView">
+              <table id="loginForm" class="inputForm">
                 <tr>
-                    <td class="auto-style">
-                        <p style="text-align:center; font-size:x-large">Please log in to view your order history.</p>
-                           </td>
+                    <th colspan="2"><h2>Order History</h2></th>
                 </tr>
                 <tr>
-                    <td class="auto-style">
-                            &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td style="text-align:center">
-                          
-                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" style="border-color: #4D94FF;
-                            background-color: white; color: #284E98; font-size:x-large; text-align:center;" 
-                            OnClick="btnSignIn_Click" Width="320px"/>
-                
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click"  />
+                    </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-               
             </table>
-            </div>
+        </div>
 
      <%}
          else{ %>
     <div style="width:75%; margin:0 auto; min-height:400px">
-    <table class="table table-bordered" style="width: 100%; background-color: darkgray">
+    <table class="table table-bordered" style="width: 100%; background-color: yellowgreen">
                 <tr>
                     <th class="width1">
                         Order ID

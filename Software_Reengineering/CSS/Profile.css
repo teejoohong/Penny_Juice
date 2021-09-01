@@ -93,6 +93,12 @@ a {
     }
 
 
+    .btnCheckOut {
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 3%
+    }
+
 .item {
     margin: 0px auto 0px auto;
     border: 5px inset darkgray;

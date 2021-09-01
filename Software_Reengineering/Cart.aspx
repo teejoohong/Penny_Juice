@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Software_Reengineering.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/Profile.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <style type="text/css">
@@ -15,7 +16,21 @@
             margin-bottom:200px;
             margin-top:100px;
             background-color:lightgray;
+        }
+        .title{
+            width: 16%;
+            padding: 5%;
+        }
+        .title{
+            width: 10%;
+            padding: 5%;
+        }
 
+        .btnView{
+            border-color: #4D94FF; background-color: white; color: #284E98;
+        }
+        .btnView:hover{
+            background-color:#4D94FF; color:white;
         }
          </style>
     
@@ -23,37 +38,32 @@
           { %>
             
 
-        <div style="height:400px">
-            <table class="tableFormat">
+        <div ID="loginView">
+              <table id="loginForm" class="inputForm">
                 <tr>
-                    <td class="auto-style">
-                        <p style="text-align:center; font-size:x-large">Please log in to view your cart.</p>
-                           </td>
+                    <th colspan="2"><h2>Cart</h2></th>
                 </tr>
                 <tr>
-                    <td class="auto-style">
-                            &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td style="text-align:center">
-                          
-                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" style="
-                            background-color: white; text-align:center;" 
-                            OnClick="btnSignIn_Click" Width="200px"/>
-                
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click" />
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click"   />
+                    </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center">
-                           &nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                 </tr>
-               
             </table>
-            </div>
+        </div>
         <%}
           else{ %>
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Gallery.Item_Name, CartGallery.Quantity, CartGallery.TotalPrice, Gallery.Image, CartGallery.UserID, Gallery.JuiceID FROM CartGallery INNER JOIN Gallery ON CartGallery.JuiceID = Gallery.JuiceID WHERE (CartGallery.UserID = @UserID)">
@@ -61,9 +71,11 @@
               <asp:SessionParameter Name="UserID" SessionField="UserID" />
           </SelectParameters>
         </asp:SqlDataSource>
-     <table class="table table-bordered" style="width: 100%; background-color: darkgray">
+
+    <div style="width:75%; margin:0 auto; min-height:400px">
+        <table class="table table-bordered" style="width: 100%; background-color: yellowgreen">
                 <tr>
-                    <td class="title" style="font-weight: bold">
+                    <td  class="title" style="font-weight: bold">
                         
                     </td>
 
@@ -77,21 +89,17 @@
                     <td class="title" style="font-weight: bold">
                         Price
                     </td>
-                    <td class="title" style="font-weight: bold">
-                        
-                    </td>
+ 
                      <td class="title" style="font-weight: bold">
                         Quantity
                     </td>
-                    <td class="title" style="font-weight: bold">
-                        
-                    </td>
+
                     <td class="title" style="font-weight: bold">
                         Delete
                     </td>
                  </tr>
                </table>
-    <div style="font-size:x-large; margin-top : 1% ; font-weight:bold">
+    <div style="font-size:x-large; margin-top : 1% ;margin-right:-10%; font-weight:bold">
                 Number of items in cart :
                 <asp:Label ID="Label3" runat="server" Text="" ></asp:Label>
             </div>
@@ -100,44 +108,37 @@
                 <ItemTemplate>
                     <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("JuiceID") %>' />
                 <br/>
-                <table class="table table-bordered" style="width: 100%; background-color: lightgray">
+                <table class="table table-bordered" style="width: 100%;text-align:center; background-color: lightgray">
                     <tr>
-                        <td class="width1">
-                            <br />
+                        <td class="title">
+                            <br/>
                             <asp:CheckBox ID="chkEmpty" runat="server" AutoPostBack="true" OnCheckedChanged="Chk_Empty_CheckedChanged" />
                         </td>
-                        <td class="width1">
+                        <td class="title">
                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Image") %>' Height="100px" Width="100px"/> 
                         </td>
-                        <td class="width1">
+                        <td class="title">
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label>
                         </td>
-                        <td class="width1">
+                        <td class="title">
                             <asp:Label ID="Label3" runat="server" Text='<%# String.Format("{0:0.00}",Eval("TotalPrice"))%>'></asp:Label>                          
 
                         </td>
-                        <td class="width1">
-                             <asp:Button ID="Add" runat="server" Text="+" CommandName="Adding" CommandArgument='<%# Eval("JuiceID") %>' /><br />                        
-
-                        </td>
-                        
-                        <td class="width1" style="text-align:center">
-                           
+                        <td class="title">
+                             <asp:Button ID="Add" runat="server" CssClass="btnView" Width="26px" Text="+" CommandName="Adding" CommandArgument='<%# Eval("JuiceID") %>' />      <br />               
                             <asp:Label ID="quantity" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label><br />
-                           
+                              <asp:Button ID="Subtract" width="26px" CssClass="btnView" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("JuiceID") %>'/>                    
                         </td>
-                        <td class="width1">
-                              <asp:Button ID="Subtract" width="26px" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("JuiceID") %>'/>                    
-
-                        </td>
-                        <td class="width1">
-                            <asp:Button ID="Button1" runat="server" CssClass="btnAll" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
+                        <td class="title">
+                            <asp:Button ID="Button1"  runat="server" CssClass="btnView" Text="Delete"  CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
                         </td>
                     </tr>
                 </table>
                 
             </ItemTemplate>
             </asp:DataList>
+    </div>
+     
              <table>
                 <tr style="font-size:20px;text-align:right">
                     <td style="width:1000px;" >Total: RM </td>
@@ -148,8 +149,8 @@
             <br />
             <br/>
 
-            <div style="text-align : right  ; margin-bottom : 3%">
-                <asp:Button ID="check_Out" runat="server" CssClass="btnAll" Height="80px" Width="160px" Text="Check Out" OnClick="check_Out_Click" />
+            <div style="text-align : right  ; margin-bottom : 3%; margin-right:10%">
+                <asp:Button ID="check_Out" runat="server" CssClass="buttonLogin btnCheckOut" Height="80px" Width="160px" Text="Check Out" OnClick="check_Out_Click" />
             </div>
      <%} %>
    

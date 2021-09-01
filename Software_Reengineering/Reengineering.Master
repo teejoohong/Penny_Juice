@@ -42,9 +42,11 @@
                    <asp:MenuItem NavigateUrl="~/HomePage.aspx" Text="Home" Value="Home Page"/>
                    <asp:MenuItem NavigateUrl="~/AboutUs.aspx" Text="AboutUs" Value="About Us"/>
                    <asp:MenuItem NavigateUrl="~/Gallery.aspx" Text="Gallery" Value="Gallery"/>
+                <asp:MenuItem NavigateUrl="~/Wishlist.aspx" Text="Wishlist" Value="Wishlist"/>
                    <asp:MenuItem NavigateUrl="~/Cart.aspx" Text="Cart" Value="Cart"/>
-                   <asp:MenuItem NavigateUrl="~/Profile.aspx" Text="Profile" Value="Profile"/>
                 <asp:MenuItem NavigateUrl="~/OrderHistory.aspx" Text="Order History" Value="Order History"/>
+                   <asp:MenuItem NavigateUrl="~/Profile.aspx" Text="Profile" Value="Profile"/>
+                
               </Items>
         </asp:Menu>
 
@@ -65,9 +67,11 @@
                             <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/HomePage.aspx" runat="server">Home</asp:HyperLink></li>
                             <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/AboutUs.aspx" runat="server">AboutUs</asp:HyperLink></li>
                              <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/Gallery.aspx" runat="server">Gallery</asp:HyperLink></li>
+                             <li><asp:HyperLink ID="HyperLink7" NavigateUrl="~/Wishlist.aspx" runat="server">Wishlist</asp:HyperLink></li>
                             <li><asp:HyperLink ID="HyperLink4" NavigateUrl="~/Cart.aspx" runat="server">Cart</asp:HyperLink></li>
-                            <li><asp:HyperLink ID="HyperLink5" NavigateUrl="~/Profile.aspx" runat="server">Profile</asp:HyperLink></li>
                             <li><asp:HyperLink ID="HyperLink6" NavigateUrl="~/OrderHistory.aspx" runat="server">Order History</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink5" NavigateUrl="~/Profile.aspx" runat="server">Profile</asp:HyperLink></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -86,7 +90,10 @@
 
         <div class ="footer">
             <p>Encounter problem ?</p>
-            <p>Contact Us at +6012- 345 6789</p>
+            <p>Contact Us <br />
+                Phone: 563-386-1999<br />
+                Fax: 563-386-6200
+            </p>
             <br/>
             <p>&#169 Copyright Kenny Juice 2021. All right reserved</p>
         </div>
