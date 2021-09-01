@@ -14,7 +14,11 @@ namespace Software_Reengineering
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                SqlDataSource1.SelectCommand = "SELECT * FROM [Gallery] Where [Total] > 0";
 
+            }
         }
 
 
@@ -95,6 +99,16 @@ namespace Software_Reengineering
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "log in first! " + "');", true);
                 }
             }
+        }
+
+        protected void ShowAll_Click(object sender, EventArgs e)
+        {
+            SqlDataSource1.SelectCommand = "SELECT * FROM [Gallery] Where [Total] > 0";
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            SqlDataSource1.SelectCommand = "SELECT * FROM [Gallery] Where [Total] > 0 and Category='Color Free'";
         }
     }
 }

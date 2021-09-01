@@ -28,16 +28,16 @@
 
   <div class="row">
       <div class="column">
-        <h2>Contacts</h2>
-        <hr />
-        <p>+6018-319 9792 (TEE)</p>
-        <p>+6019-358 9809 (YONG)</p>
+        <p>Contact Us <br />
+                Phone: 563-386-1999<br />
+                Fax: 563-386-6200
+            </p>
       </div>
       <div class="column" >
         <h2>Emails</h2>
         <hr />
-        <p>teejh-wp18@student.tarc.edu.my</p>
-        <p>yongwh-wp18@student.tarc.edu.my</p>
+        <p>pennyjuice@hotmail.com</p>
+        
       </div>
 </div>
 

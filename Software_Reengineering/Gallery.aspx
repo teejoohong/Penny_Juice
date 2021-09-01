@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/Gallery.css" rel="stylesheet" type="text/css" />
-
+    <div class="container">
+                    <asp:LinkButton ID="ShowAll" runat="server" OnClick="ShowAll_Click" CssClass="linkBtn">Show All</asp:LinkButton><br />
+                    <asp:LinkButton ID="DrawingFilter" runat="server" OnClick="LinkButton1_Click" CssClass="linkBtn">Color Free</asp:LinkButton><br />
+        </div>
     <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1"  CellPadding="20" RepeatColumns="5" RepeatDirection="Horizontal"  OnItemCommand="DataList1_ItemCommand"  AllowPaging="true" PageSize ="2" >
         <ItemTemplate>
         <asp:Image ID="Image1" CssClass="Img" runat="server" ImageUrl='<%# Eval("Image") %>' />
@@ -22,5 +25,5 @@
                     </div>
         </ItemTemplate>
     </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT JuiceID, Item_Name, Description, Price, Total, Image FROM Gallery WHERE (Total &gt; 0)"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand=""></asp:SqlDataSource>
 </asp:Content>
