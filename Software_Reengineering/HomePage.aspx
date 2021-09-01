@@ -42,7 +42,7 @@
         <table class="tableThreeContainer">
         <tr style="text-align:center">
             <td><h2>Order Now</h2><hr /></td>
-            <td><h2>Bla Bla bla</h2><hr /></td>
+            <td><h2>About Us</h2><hr /></td>
  
         </tr>
         <tr>

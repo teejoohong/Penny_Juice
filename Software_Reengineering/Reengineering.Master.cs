@@ -36,6 +36,8 @@ namespace Software_Reengineering
                 {
                     menuNav.FindItem("Profile").Selected = true;
                 }
+                if(pageName== "/OrderHistoryDetails.aspx")
+                    menuNav.FindItem("Order History").Selected = true;
             }
 
 
