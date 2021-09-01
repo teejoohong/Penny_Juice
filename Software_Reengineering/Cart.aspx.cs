@@ -293,10 +293,6 @@ namespace Software_Reengineering
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void Chk_Empty_CheckedChanged(object sender, EventArgs e)
         {
@@ -311,6 +307,17 @@ namespace Software_Reengineering
                 SqlConnection con;
                 string strcon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 con = new SqlConnection(strcon);
+
+                con.Open();
+                string strSelect2 = "DELETE from CheckOut Where JuiceID=@JuiceID and UserID = @UserID";
+                SqlCommand cmdSelect2 = new SqlCommand(strSelect2, con);
+
+                cmdSelect2.Parameters.AddWithValue("@UserID", Session["UserID"]);
+                cmdSelect2.Parameters.AddWithValue("@JuiceID", hdn.Value.ToString());
+
+                int numRowAffected2 = cmdSelect2.ExecuteNonQuery();
+                con.Close();
+
 
                 if (chkrow.Checked == true)
                 {
@@ -427,9 +434,10 @@ namespace Software_Reengineering
             }
         }
 
-        protected void btnSignIn_Click(object sender, EventArgs e)
-        {
 
+        protected void btnSignIn_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("LogIn.aspx");
         }
     }
 }

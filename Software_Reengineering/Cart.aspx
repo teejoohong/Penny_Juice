@@ -4,18 +4,63 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <style type="text/css">
         
-        
-        .tableFormat {
-            border-collapse: collapse;
-            border: 2px solid black;
-            height: auto;
-            width :700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom:200px;
-            margin-top:100px;
-            background-color:lightgray;
+.buttonLogin {
+background-color: yellowgreen;
+color: black;
+width: 26%;
+height: 30px;
+font-size: 12px;
+border: 2px solid forestgreen;
+}
 
+.buttonLogin:hover {
+cursor: pointer;
+background-color: forestgreen;
+}
+
+.inputForm th {
+    border-bottom: 1px solid black;
+    background-color: yellowgreen;
+    color: black;
+    font-size: 18px;
+}
+
+.inputForm {
+    margin: 50px auto 100px auto;
+    width: 50%;
+    border: 2px solid forestgreen;
+    background-color:lightgray;
+}
+
+        .title{
+            width:14%;
+            background-color:darkgrey;
+           padding: 2%;
+        }
+
+        .auto-style {
+            padding-top:20px;
+            height: 25px;
+            
+        }
+
+        .auto-style1 {
+            width: 100%;
+            
+
+        }
+        .width1 {
+            width: 14%;
+            padding: 2%;
+            background-color : lightgray;
+        }
+
+        .btnAll{
+            border-color: #4D94FF; background-color: white; color: #284E98;
+        }
+
+        .totalprice{
+            font-size: 20px;
         }
          </style>
     
@@ -23,8 +68,8 @@
           { %>
             
 
-        <div style="height:400px">
-            <table class="tableFormat">
+        <div >
+            <table class="inputForm">
                 <tr>
                     <td class="auto-style">
                         <p style="text-align:center; font-size:x-large">Please log in to view your cart.</p>
@@ -37,9 +82,7 @@
                 <tr>
                     <td style="text-align:center">
                           
-                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" style="
-                            background-color: white; text-align:center;" 
-                            OnClick="btnSignIn_Click" Width="200px"/>
+                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" CssClass="buttonLogin" OnClick="btnSignIn_Click1"/>
                 
                     </td>
                 </tr>
@@ -63,10 +106,10 @@
         </asp:SqlDataSource>
      <table class="table table-bordered" style="width: 100%; background-color: darkgray">
                 <tr>
-                    <td class="title" style="font-weight: bold">
-                        
+                   
+                     <td class="title" style="font-weight: bold">
+                        &nbsp &nbsp &nbsp
                     </td>
-
                     <td class="title" style="font-weight: bold">
                         Image
                     </td>
@@ -77,15 +120,11 @@
                     <td class="title" style="font-weight: bold">
                         Price
                     </td>
-                    <td class="title" style="font-weight: bold">
-                        
-                    </td>
+                   
                      <td class="title" style="font-weight: bold">
                         Quantity
                     </td>
-                    <td class="title" style="font-weight: bold">
-                        
-                    </td>
+                    
                     <td class="title" style="font-weight: bold">
                         Delete
                     </td>
@@ -119,14 +158,11 @@
                         <td class="width1">
                              <asp:Button ID="Add" runat="server" Text="+" CommandName="Adding" CommandArgument='<%# Eval("JuiceID") %>' /><br />                        
 
-                        </td>
                         
-                        <td class="width1" style="text-align:center">
                            
                             <asp:Label ID="quantity" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label><br />
                            
-                        </td>
-                        <td class="width1">
+                        
                               <asp:Button ID="Subtract" width="26px" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("JuiceID") %>'/>                    
 
                         </td>

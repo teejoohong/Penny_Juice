@@ -9,20 +9,37 @@
         }
         .width1 {
             width: 15.8%;
-            padding : 5%;
+            padding : 2%;
             
         }
-        .tableFormat {
-            border-collapse: collapse;
-            border: 1px solid grey;
-            height: auto;
-            width :700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom:200px;
-            margin-top:100px;
-            background-color: lightgray;
-        }
+.inputForm th {
+    border-bottom: 1px solid black;
+    background-color: yellowgreen;
+    color: black;
+    font-size: 18px;
+}
+
+.inputForm {
+    margin: 50px auto 100px auto;
+    width: 50%;
+    border: 2px solid forestgreen;
+    background-color:lightgray;
+}
+
+.buttonLogin {
+    background-color: yellowgreen;
+    color: black;
+    width: 26%;
+    height: 30px;
+    font-size: 12px;
+    border: 2px solid forestgreen;
+}
+
+    .buttonLogin:hover {
+        cursor: pointer;
+        background-color: forestgreen;
+    }
+
         .auto-style2 {
             width: 16%;
             height: 38px;
@@ -36,8 +53,8 @@
      <h1 style="text-align:center">Wishlist</h1><hr />
      <% if (Session["UserID"] == "0" || Session["UserID"] == null)
           { %>
-        <div style="height:400px; margin: 0 10%;">
-            <table class="tableFormat">
+        <div >
+            <table class="inputForm">
                 <tr>
                     <td class="auto-style">
                         <p style="text-align:center; font-size:x-large">Please log in to view your wishlist.</p>
@@ -50,9 +67,7 @@
                 <tr>
                     <td style="text-align:center">
                           
-                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" style="border-color: #4D94FF;
-                            background-color: white; color: #284E98; font-size:x-large; text-align:center;" 
-                            OnClick="btnSignIn_Click" Width="320px"/>
+                            <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" CssClass="buttonLogin" />
                 
                     </td>
                 </tr>
@@ -99,7 +114,7 @@
         <asp:Label ID="Label3" runat="server" Text="" style="font-size:x-large;"></asp:Label>
     </div>
     
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="CustomerID" DataSourceID="SqlDataSource1" OnItemDataBound="DataList1_ItemDataBound" OnItemCommand="DataList1_ItemCommand" Height="16px" Width="100%">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand" Height="16px" Width="100%">
             <ItemTemplate>
                 <br />
                 <table class="table table-bordered" style="width: 100%; background-color: lightgray">
@@ -125,16 +140,16 @@
                             <asp:Label ID="Label4" runat="server" Text='<%# String.Format("RM {0:0.00}",Eval("Price")) %>'></asp:Label>
                         </td>
                         <td class="width1">
-                            <asp:Button ID="Button1" runat="server" CssClass="btnDelete" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("DrawID") %>'/>
+                            <asp:Button ID="Button1" runat="server" CssClass="btnDelete" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
                         </td>
                     </tr>
                 </table>
 
             </ItemTemplate>
         </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Gallery.Name, Gallery.Price, Gallery.Description, WishlistGallery.CustomerID, WishlistGallery.DrawID, Gallery.Image FROM WishlistGallery INNER JOIN Gallery ON WishlistGallery.DrawID = Gallery.DrawID WHERE (WishlistGallery.CustomerID = @CustomerID)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Gallery.Item_Name, Gallery.Price, Gallery.Description, Wishlist.UserID, Wishlist.JuiceID, Gallery.Image FROM Wishlist INNER JOIN Gallery ON Wishlist.JuiceID = Gallery.JuiceID WHERE (Wishlist.UserID = @UserID)">
             <SelectParameters>
-                <asp:SessionParameter Name="CustomerID" SessionField="Value" />
+                <asp:SessionParameter Name="UserID" SessionField="UserID" />
             </SelectParameters>
         </asp:SqlDataSource>
     <br />
