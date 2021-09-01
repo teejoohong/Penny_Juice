@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="EditProfilePicture.aspx.cs" Inherits="Software_Reengineering.EditProfilePicture" %>
+﻿<%@ Page Title="Edit Profile Picture" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="EditProfilePicture.aspx.cs" Inherits="Software_Reengineering.EditProfilePicture" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link href="CSS/Profile.css" rel="stylesheet" type="text/css" />
 </asp:Content>

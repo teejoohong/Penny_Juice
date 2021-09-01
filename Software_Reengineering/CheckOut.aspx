@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="CheckOut.aspx.cs" Inherits="Software_Reengineering.CheckOut" %>
+﻿<%@ Page Title="Check Out" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="CheckOut.aspx.cs" Inherits="Software_Reengineering.CheckOut" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
     .width1 {
-            width: 120px;
+            width: 16%;
+            padding : 2%
         }
         </style>
     <div style="margin:0% 10% 0% 10%;">
@@ -33,8 +34,8 @@
         </div>
         <br />
     </div>
-        <div style="width:75%; margin:0% 10% 0% 10%; min-height:400px">
-            <table class="table table-bordered" style="width: 100%; background-color: darkgray">
+        <div style="width:80%; margin:0% 10% 0% 10%; min-height:400px;text-align:center">
+            <table class="table table-bordered" style="width: 100%; background-color: yellowgreen">
                         <tr>
                             <td class="width1" style="font-weight: bold">
                                 Juice ID
@@ -84,7 +85,7 @@
 
         </ItemTemplate>
     </asp:DataList>
-            </div>
+            
 
     
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT CheckOut.JuiceID, CheckOut.Quantity, CheckOut.TotalPrice, Gallery.Image, CheckOut.UserID, Gallery.Item_Name FROM CheckOut INNER JOIN Gallery ON CheckOut.JuiceID = Gallery.JuiceID WHERE (CheckOut.UserID = @UserID)">
@@ -92,7 +93,7 @@
             <asp:SessionParameter Name="UserID" SessionField="UserID" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <div>
+    <div style="text-align:left">
      <p>Select Payment method</p>
     <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" AutoPostBack="true">
         <asp:ListItem>Master/Visa Card</asp:ListItem>
@@ -121,5 +122,5 @@
     </div>
     <br />
 
-    
+    </div>
 </asp:Content>

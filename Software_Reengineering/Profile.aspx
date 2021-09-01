@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Software_Reengineering.Profile" %>
+﻿<%@ Page Title="Profile" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Software_Reengineering.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/Profile.css" rel="stylesheet" type="text/css" />
 </asp:Content>
