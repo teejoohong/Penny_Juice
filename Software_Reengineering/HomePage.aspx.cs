@@ -13,5 +13,10 @@ namespace Software_Reengineering
         {
 
         }
+
+        protected void btnBMI_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Gallery.aspx");
+        }
     }
 }

@@ -54,7 +54,7 @@
                 AlternateText="Calculator"  Width ="100%" Height="100%" />
                 </a>
                 <br />
-                <asp:Button ID="btnBMI" CssClass="btnContainer" runat="server" Text="Order Now" />
+                <asp:Button ID="btnBMI" CssClass="btnContainer" runat="server" Text="Order Now" OnClick="btnBMI_Click" />
             </div>
             </td>
             <td>
@@ -65,7 +65,7 @@
                                     AlternateText="Smart Personal Scheduler" Width ="100%" Height="100%" />
                 </a>
                 <br />
-                <asp:Button ID="btnTimetable" CssClass="btnContainer" runat="server" Text="Bla Bla Bla" />
+                <asp:Button ID="btnTimetable" CssClass="btnContainer" runat="server" Text="About Us" />
             
             </div>
             </td>
