@@ -92,10 +92,11 @@ a {
         background-color: forestgreen;
     }
 
-    .btnCheckOut{
-        font-weight:bold;
-        font-size:15px;
-        margin-right:3%
+
+    .btnCheckOut {
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 3%
     }
 
 .item {

@@ -36,6 +36,13 @@
         background-color: forestgreen;
     }
 
+        .btnView{
+            border-color: #4D94FF; background-color: white; color: #284E98;
+        }
+        .btnView:hover{
+            background-color:#4D94FF; color:white;
+        }
+
         .auto-style2 {
             width: 16%;
             height: 38px;
@@ -82,7 +89,7 @@
     <table class="table table-bordered" style="width: 100%; background-color: yellowgreen">
                 <tr>
                     <th class="auto-style2">
-                        Draw ID
+                        Juice ID
                     </th>
 
                     <th class="auto-style2">
@@ -110,7 +117,7 @@
         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand" Height="16px" Width="100%">
             <ItemTemplate>
                 <br />
-                <table class="table table-bordered" style="width: 100%; background-color: lightgray">
+                <table class="table table-bordered" style="width: 100%;text-align:center; background-color: lightgray">
                     <tr>
                         <td class="width1">
                             
@@ -133,7 +140,7 @@
                             <asp:Label ID="Label4" runat="server" Text='<%# String.Format("RM {0:0.00}",Eval("Price")) %>'></asp:Label>
                         </td>
                         <td class="width1">
-                            <asp:Button ID="Button1" runat="server" CssClass="btnDelete" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
+                            <asp:Button ID="Button1" runat="server" CssClass="btnView"  Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
                         </td>
                     </tr>
                 </table>

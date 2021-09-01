@@ -65,7 +65,7 @@
                                     AlternateText="Smart Personal Scheduler" Width ="100%" Height="100%" />
                 </a>
                 <br />
-                <asp:Button ID="btnTimetable" CssClass="btnContainer" runat="server" Text="About Us" />
+                <asp:Button ID="btnTimetable" CssClass="btnContainer" runat="server" Text="About Us" OnClick="btnTimetable_Click" />
             
             </div>
             </td>

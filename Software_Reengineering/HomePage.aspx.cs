@@ -18,5 +18,10 @@ namespace Software_Reengineering
         {
             Response.Redirect("Gallery.aspx");
         }
+
+        protected void btnTimetable_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AboutUs.aspx");
+        }
     }
 }

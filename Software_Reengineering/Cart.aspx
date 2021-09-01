@@ -25,52 +25,38 @@
             width: 10%;
             padding: 5%;
         }
-        }
 
-        .totalprice{
-            font-size: 20px;
+        .btnView{
+            border-color: #4D94FF; background-color: white; color: #284E98;
         }
-        }
-        <div >
-             <table id="loginForm" class="inputForm">
-        <div ID="loginView">
-              <table id="loginForm" class="inputForm">
-            font-size: 20px;
+        .btnView:hover{
+            background-color:#4D94FF; color:white;
         }
          </style>
-        <div >
-             <table id="loginForm" class="inputForm">
+    
+     <% if ( Session["UserID"] == null)
           { %>
-                <tr style="text-align:center">
-                    <td colspan="2">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"/>
-                <tr style="text-align:center">
-                    <td colspan="2">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"  />
+            
+
+        <div ID="loginView">
               <table id="loginForm" class="inputForm">
                 <tr>
-                <tr style="text-align:center">
+                    <th colspan="2"><h2>Cart</h2></th>
+                </tr>
+                <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr style="text-align:center">
                     <td colspan="2">
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click" />
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click" />
                     </td>
+                </tr>
+                <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr style="text-align:center">
                     <td colspan="2">
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click"    />
-                    </td>
-                </tr>
-                <tr style="text-align:center">
-                    <td colspan="2">
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click" />
-                    </td>
-                </tr>
-                <tr style="text-align:center">
-                    <td colspan="2">
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click"    />
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click"   />
                     </td>
                 </tr>
                 <tr>
@@ -139,12 +125,12 @@
 
                         </td>
                         <td class="title">
-                             <asp:Button ID="Add" runat="server" Text="+" CommandName="Adding" CommandArgument='<%# Eval("JuiceID") %>' /><br />                        
+                             <asp:Button ID="Add" runat="server" CssClass="btnView" Width="26px" Text="+" CommandName="Adding" CommandArgument='<%# Eval("JuiceID") %>' />      <br />               
                             <asp:Label ID="quantity" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label><br />
-                              <asp:Button ID="Subtract" width="26px" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("JuiceID") %>'/>                    
+                              <asp:Button ID="Subtract" width="26px" CssClass="btnView" runat="server" Text="-" CommandName="Subtract" CommandArgument='<%# Eval("JuiceID") %>'/>                    
                         </td>
                         <td class="title">
-                            <asp:Button ID="Button1" runat="server" CssClass="btnAll" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
+                            <asp:Button ID="Button1"  runat="server" CssClass="btnView" Text="Delete"  CommandName="Delete" CommandArgument='<%# Eval("JuiceID") %>'/>
                         </td>
                     </tr>
                 </table>

@@ -28,6 +28,9 @@
         .btnView{
             border-color: #4D94FF; background-color: white; color: #284E98;
         }
+        .btnView:hover{
+            background-color:#4D94FF; color:white;
+        }
 
         .content{
             border : none;
