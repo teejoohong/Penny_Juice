@@ -25,27 +25,48 @@
             width: 10%;
             padding: 5%;
         }
-         </style>
-    
-     <% if ( Session["UserID"] == null)
-          { %>
-            
+        }
 
+        .totalprice{
+            font-size: 20px;
+        }
+        }
+        <div >
+             <table id="loginForm" class="inputForm">
         <div ID="loginView">
               <table id="loginForm" class="inputForm">
+            font-size: 20px;
+        }
+         </style>
+        <div >
+             <table id="loginForm" class="inputForm">
+          { %>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"/>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"  />
+              <table id="loginForm" class="inputForm">
                 <tr>
-                    <th colspan="2"><h2>Cart</h2></th>
-                </tr>
-                <tr>
+                <tr style="text-align:center">
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr style="text-align:center">
                     <td colspan="2">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="buttonLogin" OnClick="btnLogin_Click"  />
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click" />
+                    </td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click"    />
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="2">&nbsp;</td>
+                <tr style="text-align:center">
+                    <td colspan="2">
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="buttonLogin" OnClick="btnRegister_Click" />
+                    </td>
                 </tr>
                 <tr style="text-align:center">
                     <td colspan="2">
