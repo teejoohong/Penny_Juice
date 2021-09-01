@@ -6,6 +6,8 @@
     <div class="container">
                     <asp:LinkButton ID="ShowAll" runat="server" OnClick="ShowAll_Click" CssClass="linkBtn">Show All</asp:LinkButton><br />
                     <asp:LinkButton ID="DrawingFilter" runat="server" OnClick="LinkButton1_Click" CssClass="linkBtn">Color Free</asp:LinkButton><br />
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton2_Click" CssClass="linkBtn">Normal juice</asp:LinkButton><br />
+                     <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton3_Click" CssClass="linkBtn">Mixed juice</asp:LinkButton><br />
         </div>
     <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1"  CellPadding="20" RepeatColumns="5" RepeatDirection="Horizontal"  OnItemCommand="DataList1_ItemCommand"  AllowPaging="true" PageSize ="2" >
         <ItemTemplate>
@@ -20,7 +22,7 @@
                     <a style="margin-left: 10px">Quantity: </a><asp:Label ID="Label4" runat="server"  Text='<%#Eval("Total") %>'></asp:Label>
                     <br/><br />                
                     <asp:Button CssClass="Button" ID="Button1" runat="server" Text='Add to cart' CommandName="AddToCart" CommandArgument='<%# Eval("JuiceID") %>'/>&nbsp<br /> <br />
-                    
+                    <asp:Button CssClass="Button" ID="Button15" runat="server" Text="Add to Wishlist" CommandName="Wishlist" CommandArgument='<%# Eval("JuiceID") %>'/>
                     <br />
                     </div>
         </ItemTemplate>
