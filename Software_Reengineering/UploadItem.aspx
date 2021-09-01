@@ -46,7 +46,8 @@
             <td>
                 <asp:DropDownList ID="CategoryList" runat="server">
                     <asp:ListItem>Color Free</asp:ListItem>
-                    
+                    <asp:ListItem>Normal juice</asp:ListItem>
+                     <asp:ListItem>Mixed juice</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
