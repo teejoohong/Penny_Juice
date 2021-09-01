@@ -51,7 +51,7 @@ background-color: forestgreen;
         }
 
         .btnAll{
-            border-color: #4D94FF; background-color: white; color: #284E98;
+            border-color: black; background-color: yellowgreen; 
         }
 
         .totalprice{

@@ -39,11 +39,11 @@
         .auto-style2 {
             width: 16%;
             height: 38px;
-            background-color : darkgray;
+           
             padding:5%;
         }
         .btnDelete{
-            border-color: #4D94FF; background-color: white; color: #284E98;
+            border-color: black; background-color: yellowgreen;
         }
          </style>
      
@@ -79,7 +79,7 @@
      <%}
           else{ %>
     <div style="width:75%; margin:0 auto; min-height:400px">
-    <table class="table table-bordered" style="width: 100%; background-color: darkgray">
+    <table class="table table-bordered" style="width: 100%; background-color: yellowgreen">
                 <tr>
                     <th class="auto-style2">
                         Draw ID
