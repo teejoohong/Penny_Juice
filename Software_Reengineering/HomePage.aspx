@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="Software_Reengineering.HomePage" %>
+﻿<%@ Page Title="Homepage" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="Software_Reengineering.HomePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/HomePage.css" rel="stylesheet" type="text/css" />
 
