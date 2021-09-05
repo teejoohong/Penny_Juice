@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="OrderHistory.aspx.cs" Inherits="Software_Reengineering.OrderHistory" %>
+﻿<%@ Page Title="Order History" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="OrderHistory.aspx.cs" Inherits="Software_Reengineering.OrderHistory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/Profile.css" rel="stylesheet" type="text/css" />
 </asp:Content>

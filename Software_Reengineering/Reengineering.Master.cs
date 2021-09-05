@@ -38,6 +38,8 @@ namespace Software_Reengineering
                 }
                 if(pageName== "/OrderHistoryDetails.aspx")
                     menuNav.FindItem("Order History").Selected = true;
+                if (pageName == "/CheckOut.aspx")
+                    menuNav.FindItem("Cart").Selected = true;
             }
 
 

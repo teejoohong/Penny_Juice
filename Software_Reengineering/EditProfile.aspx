@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="EditProfile.aspx.cs" Inherits="Software_Reengineering.EditProfile" %>
+﻿<%@ Page Title="Edit Profile" Language="C#" MasterPageFile="~/Reengineering.Master" AutoEventWireup="true" CodeBehind="EditProfile.aspx.cs" Inherits="Software_Reengineering.EditProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="CSS/Profile.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -52,7 +52,7 @@
             <td class="sideColumn2">
                                 <span class="lbl" style="font-weight : bold">Contact Number :</span><br />
                 <asp:TextBox ID="txtContactNumber" CssClass="txtBox" runat="server" ></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Weight cannot be empty." ControlToValidate="txtContactNumber" ForeColor="Red" SetFocusOnError="true" Font-Size="Small"></asp:RequiredFieldValidator><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Contact number cannot be empty." ControlToValidate="txtContactNumber" ForeColor="Red" SetFocusOnError="true" Font-Size="Small"></asp:RequiredFieldValidator><br />
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Required proper phone format." ControlToValidate="txtContactNumber" ValidationExpression="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$"  Font-Size="Small" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
             </td>
             <td class="sideColumn">
