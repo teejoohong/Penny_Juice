@@ -123,7 +123,10 @@
         </ItemTemplate>
 
     </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Order]">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Order] Where UserID= @UserID">
+                    <SelectParameters>
+                <asp:SessionParameter Name="UserID" SessionField="UserID" />
+            </SelectParameters>
     </asp:SqlDataSource>
         <br/>
      </div>
